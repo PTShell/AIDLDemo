@@ -10,10 +10,25 @@ import android.os.Parcelable;
  */
 public class Parameter implements Parcelable {
 
+    public static final Creator<Parameter> CREATOR = new Creator<Parameter>() {
+        @Override
+        public Parameter createFromParcel(Parcel source) {
+            return new Parameter(source);
+        }
+
+        @Override
+        public Parameter[] newArray(int size) {
+            return new Parameter[size];
+        }
+    };
     private int param;
 
     public Parameter(int param) {
         this.param = param;
+    }
+
+    protected Parameter(Parcel in) {
+        this.param = in.readInt();
     }
 
     public int getParam() {
@@ -33,21 +48,5 @@ public class Parameter implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(this.param);
     }
-
-    protected Parameter(Parcel in) {
-        this.param = in.readInt();
-    }
-
-    public static final Creator<Parameter> CREATOR = new Creator<Parameter>() {
-        @Override
-        public Parameter createFromParcel(Parcel source) {
-            return new Parameter(source);
-        }
-
-        @Override
-        public Parameter[] newArray(int size) {
-            return new Parameter[size];
-        }
-    };
 
 }

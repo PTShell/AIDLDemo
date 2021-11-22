@@ -46,18 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Messenger replyMessenger;
 
-    private static class MessengerHandler extends Handler {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case CODE_MESSAGE: {
-                    Log.e(TAG, "客户端收到了服务端回复的消息：" + msg.arg1);
-                    break;
-                }
-            }
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,6 +96,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private static class MessengerHandler extends Handler {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case CODE_MESSAGE: {
+                    Log.e(TAG, "客户端收到了服务端回复的消息：" + msg.arg1);
+                    break;
+                }
+            }
+        }
     }
 
 }

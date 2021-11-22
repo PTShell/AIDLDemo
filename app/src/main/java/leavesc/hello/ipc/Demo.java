@@ -10,16 +10,31 @@ import android.os.Parcelable;
  */
 public class Demo implements Parcelable {
 
+    public static final Creator<Demo> CREATOR = new Creator<Demo>() {
+        @Override
+        public Demo createFromParcel(Parcel source) {
+            return new Demo(source);
+        }
+
+        @Override
+        public Demo[] newArray(int size) {
+            return new Demo[size];
+        }
+    };
     private String stringField;
-
     private int intField;
-
     private boolean booleanField;
 
     public Demo(String stringField, int intField, boolean booleanField) {
         this.stringField = stringField;
         this.intField = intField;
         this.booleanField = booleanField;
+    }
+
+    protected Demo(Parcel in) {
+        this.stringField = in.readString();
+        this.intField = in.readInt();
+        this.booleanField = in.readByte() != 0;
     }
 
     @Override
@@ -33,22 +48,4 @@ public class Demo implements Parcelable {
         dest.writeInt(this.intField);
         dest.writeByte(this.booleanField ? (byte) 1 : (byte) 0);
     }
-
-    protected Demo(Parcel in) {
-        this.stringField = in.readString();
-        this.intField = in.readInt();
-        this.booleanField = in.readByte() != 0;
-    }
-
-    public static final Creator<Demo> CREATOR = new Creator<Demo>() {
-        @Override
-        public Demo createFromParcel(Parcel source) {
-            return new Demo(source);
-        }
-
-        @Override
-        public Demo[] newArray(int size) {
-            return new Demo[size];
-        }
-    };
 }

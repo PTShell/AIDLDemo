@@ -21,8 +21,8 @@ import leavesc.hello.binder_pool_server.IOperation;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
     private IOperation operation;
-
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
             bindService();
         }
     };
-
-    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

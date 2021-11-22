@@ -19,6 +19,16 @@ public class MessengerService extends Service {
     private static final String TAG = "MessengerService";
 
     private static final int CODE_MESSAGE = 1;
+    private Messenger messenger;
+
+    public MessengerService() {
+        messenger = new Messenger(new MessengerHandler());
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return messenger.getBinder();
+    }
 
     private static class MessengerHandler extends Handler {
         @Override
@@ -41,17 +51,6 @@ public class MessengerService extends Service {
                 }
             }
         }
-    }
-
-    private Messenger messenger;
-
-    public MessengerService() {
-        messenger = new Messenger(new MessengerHandler());
-    }
-
-    @Override
-    public IBinder onBind(Intent intent) {
-        return messenger.getBinder();
     }
 
 }

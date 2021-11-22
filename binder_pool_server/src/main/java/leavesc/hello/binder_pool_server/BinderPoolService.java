@@ -12,6 +12,17 @@ import android.os.IBinder;
  */
 public class BinderPoolService extends Service {
 
+    private Binder binderPool;
+
+    public BinderPoolService() {
+        binderPool = new BinderPoolImpl();
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return binderPool;
+    }
+
     private class BinderPoolImpl extends IBinderPool.Stub {
 
         @Override
@@ -27,17 +38,6 @@ public class BinderPoolService extends Service {
             return null;
         }
 
-    }
-
-    private Binder binderPool;
-
-    public BinderPoolService() {
-        binderPool = new BinderPoolImpl();
-    }
-
-    @Override
-    public IBinder onBind(Intent intent) {
-        return binderPool;
     }
 
 }
