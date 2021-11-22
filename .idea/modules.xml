@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AIDLDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/AIDLDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aidl_client/AIDLDemo.aidl_client.iml" filepath="$PROJECT_DIR$/.idea/modules/aidl_client/AIDLDemo.aidl_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aidl_server/AIDLDemo.aidl_server.iml" filepath="$PROJECT_DIR$/.idea/modules/aidl_server/AIDLDemo.aidl_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AIDLDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AIDLDemo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/binder_pool_client/AIDLDemo.binder_pool_client.iml" filepath="$PROJECT_DIR$/.idea/modules/binder_pool_client/AIDLDemo.binder_pool_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/binder_pool_client2/AIDLDemo.binder_pool_client2.iml" filepath="$PROJECT_DIR$/.idea/modules/binder_pool_client2/AIDLDemo.binder_pool_client2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/binder_pool_server/AIDLDemo.binder_pool_server.iml" filepath="$PROJECT_DIR$/.idea/modules/binder_pool_server/AIDLDemo.binder_pool_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/messenger_client/AIDLDemo.messenger_client.iml" filepath="$PROJECT_DIR$/.idea/modules/messenger_client/AIDLDemo.messenger_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/messenger_server/AIDLDemo.messenger_server.iml" filepath="$PROJECT_DIR$/.idea/modules/messenger_server/AIDLDemo.messenger_server.iml" />
+    </modules>
+  </component>
+</project>
